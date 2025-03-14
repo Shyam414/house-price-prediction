@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>House Price Prediction</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 20px; }
+        form { display: inline-block; text-align: left; }
+        input { margin: 5px; padding: 8px; width: 200px; }
+        button { padding: 10px; background: blue; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>House Price Prediction</h1>
+    <form action="/predict" method="post">
+        <input type="text" name="CRIM" placeholder="CRIM (Crime rate)" required><br>
+        <input type="text" name="ZN" placeholder="ZN (Land zone)" required><br>
+        <input type="text" name="INDUS" placeholder="INDUS (Industry proportion)" required><br>
+        <input type="text" name="CHAS" placeholder="CHAS (River proximity)" required><br>
+        <input type="text" name="NOX" placeholder="NOX (Air pollution level)" required><br>
+        <input type="text" name="RM" placeholder="RM (Avg. rooms per house)" required><br>
+        <input type="text" name="AGE" placeholder="AGE (House age)" required><br>
+        <input type="text" name="DIS" placeholder="DIS (Distance to city center)" required><br>
+        <input type="text" name="RAD" placeholder="RAD (Accessibility to highways)" required><br>
+        <input type="text" name="TAX" placeholder="TAX (Property tax rate)" required><br>
+        <input type="text" name="PTRATIO" placeholder="PTRATIO (Student-teacher ratio)" required><br>
+        <input type="text" name="B" placeholder="B (Black population proportion)" required><br>
+        <input type="text" name="LSTAT" placeholder="LSTAT (Low-income proportion)" required><br>
+        <button type="submit">Predict Price</button>
+    </form>
+    
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
